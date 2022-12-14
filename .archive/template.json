@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "986ba422-79c2-47fb-92e2-267f9798ecf4"
+        },
+        "name": {
+            "value": "foo"
+        },
+        "location": {
+            "value": "canadacentral"
+        },
+        "environmentId": {
+            "value": "/subscriptions/986ba422-79c2-47fb-92e2-267f9798ecf4/resourceGroups/CH1-FabrikamRG/providers/Microsoft.App/managedEnvironments/managedEnvironment-CH1FabrikamRG-839e"
+        },
+        "containers": {
+            "value": [
+                {
+                    "name": "foo",
+                    "image": "docker.io/nginxdemos/hello:plain-text",
+                    "command": [],
+                    "resources": {
+                        "cpu": 0.25,
+                        "memory": ".5Gi"
+                    }
+                }
+            ]
+        },
+        "registries": {
+            "value": []
+        },
+        "secrets": {
+            "value": {
+                "arrayValue": []
+            }
+        },
+        "ingress": {
+            "value": {
+                "external": true,
+                "transport": "Auto",
+                "allowInsecure": true,
+                "targetPort": 80
+            }
+        },
+        "environmentName": {
+            "value": "managedEnvironment-CH1FabrikamRG-839e"
+        },
+        "workspaceName": {
+            "value": "workspacech1fabrikamrg996b"
+        },
+        "workspaceLocation": {
+            "value": "canadacentral"
+        }
+    }
+}
