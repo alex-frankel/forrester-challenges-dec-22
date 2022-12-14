@@ -13,12 +13,14 @@ param port int = 80
 // @secure()
 // param password string = ''
 
+param env array = []
+
 param isExternal bool = true
 
 var image = '${registryUrl}/${imageName}:${tag}'
 
 // instantiate the environment
-module env 'modules/managed-environment.bicep' = {
+module environment 'modules/managed-environment.bicep' = {
   name: 'envDeploy'
   params: {
     baseName: 'forresterChallenge'
@@ -37,8 +39,9 @@ module app 'modules/http-container.bicep' = {
     // containerRegistry: registryUrl
     // containerRegistryPassword: userName
     // containerRegistryUsername: password
-    environmentId: env.outputs.environmentId
+    environmentId: environment.outputs.environmentId
     isExternalIngress: isExternal
+    env: env
   }
 }
 

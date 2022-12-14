@@ -25,7 +25,7 @@ resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {
   properties: {
     managedEnvironmentId: environmentId
     configuration: {
-      ingress: union({ // using stupid union() workaround to set optional property "customDomains", see #387
+      ingress: union({
         external: isExternalIngress
         targetPort: containerPort
         allowInsecure: true
